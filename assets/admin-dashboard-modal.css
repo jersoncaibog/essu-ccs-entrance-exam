@@ -1,0 +1,110 @@
+/* Add Question Form Modal */
+#add-question-form {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+#add-question-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4c51bf;
+}
+
+
+#add-question-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-question-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#add-question-form input,
+#add-question-form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#add-question-form input:focus,
+#add-question-form select:focus {
+    outline: none;
+    border-color: #4c51bf;
+    box-shadow: 0 0 5px rgba(76, 81, 191, 0.5);
+}
+
+
+#add-question-form .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#add-question-form button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#add-question-form button[type="submit"] {
+    background: #4c51bf;
+    color: white;
+}
+
+#add-question-form button[type="submit"]:hover {
+    background: #3730a3;
+}
+
+#add-question-form button#cancel-question {
+    background: #ccc;
+    color: black;
+}
+
+#add-question-form button#cancel-question:hover {
+    background: #999;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

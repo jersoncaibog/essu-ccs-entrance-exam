@@ -1,0 +1,176 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #667eea;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+}
+
+.exam-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.exam-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.student-info {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.student-info input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.instructions {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-left: 4px solid #667eea;
+    border-radius: 5px;
+}
+
+.question {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.question h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.options {
+    margin-left: 20px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #667eea;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #5567c3;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #a0a5db;
+    cursor: not-allowed;
+}
+
+#submit-exam {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.result-header {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 20px;
+    color: #667eea;
+    margin: 20px 0;
+}
+
+.result-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.answer-review {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.answer-review h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.incorrect {
+    color: #b61e0d;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    .exam-info {
+        flex-direction: column;
+    }
+    .timer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
