@@ -44,8 +44,9 @@ body {
     transition: 0.3s;
 }
 
-.sidebar ul li:hover {
-    background: #2f2b6c; /* Darker Violet */
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: #2f2b6c;
 }
 
 .sidebar ul li a {
@@ -72,6 +73,99 @@ body {
     font-size: 28px;
     margin-bottom: 20px;
     color: #333; /* Dark text for readability */
+}
+
+/* Page header */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    padding: 0 4px;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-header h1 i {
+    color: #4c51bf;
+}
+
+.page-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-primary {
+    background: #4c51bf;
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #3730a3;
+}
+
+.btn-export {
+    background: #fff;
+    color: #4c51bf;
+    border: 1.5px solid #4c51bf;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-export:hover {
+    background: #4c51bf;
+    color: #fff;
+}
+
+.text-muted {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.badge-pass, .badge-fail {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.badge-pass {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-fail {
+    background: #fee2e2;
+    color: #dc2626;
 }
 
 /* Cards */

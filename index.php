@@ -84,19 +84,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST["admin-username"];
         $password = $_POST["admin-password"];
 
-        // Use prepared statement for admin login
-        $stmt = $conn->prepare("SELECT id FROM admin WHERE username = ? AND password = ?");
-        $stmt->bind_param("ss", $username, $password);
+        $stmt = $conn->prepare("SELECT id, password FROM admin WHERE username = ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            $_SESSION["adminLoggedIn"] = true;
-            echo "<script>alert('Admin login successful! Redirecting...'); window.location.href = 'admin-dashboard.php';</script>";
-            exit();
-        } else {
-            echo "<script>alert('Invalid admin credentials!');</script>";
+            $admin = $result->fetch_assoc();
+            if (password_verify($password, $admin['password'])) {
+                $_SESSION["adminLoggedIn"] = true;
+                $_SESSION["adminId"] = $admin['id'];
+                session_write_close();
+                $appBase = rtrim(dirname($_SERVER['PHP_SELF']), '/');
+                header('Location: ' . $appBase . '/admin/questions');
+                exit();
+            }
         }
+        echo "<script>alert('Invalid admin credentials!');</script>";
         $stmt->close();
     }
 }

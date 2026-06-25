@@ -35,9 +35,10 @@ $current_timestamp = date('Y-m-d H:i:s');
 $sql = "UPDATE student SET score = '$score', exam_date = '$current_timestamp' WHERE id = '$student_id'";
 if ($conn->query($sql)) {
     echo json_encode([
-        "success" => true, 
-        "message" => "Exam submitted successfully", 
-        "score" => $score,
+        "success"  => true,
+        "message"  => "Exam submitted successfully",
+        "score"    => $score,
+        "passed"   => $score >= 12,
         "exam_date" => $current_timestamp
     ]);
 } else {

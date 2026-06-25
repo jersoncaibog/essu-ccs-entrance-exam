@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     }
 
     shuffle($questions);
-    $questions = array_slice($questions, 0, 2);
+    $questions = array_slice($questions, 0, 20);
 }
 
 $conn->close();
@@ -274,11 +274,25 @@ $conn->close();
                                     document.querySelector('.container').style.display = 'none';
                                     
                                     // Create and show results container
+                                    const passed = data.passed;
                                     const resultsContainer = document.createElement('div');
                                     resultsContainer.className = 'result-container';
                                     resultsContainer.innerHTML = `
                                         <div id="pdf-content">
                                             <h2>Exam Results</h2>
+                                            <div style="text-align:center; margin: 16px 0;">
+                                                <span style="
+                                                    display: inline-block;
+                                                    padding: 10px 32px;
+                                                    border-radius: 8px;
+                                                    font-size: 1.4rem;
+                                                    font-weight: bold;
+                                                    letter-spacing: 2px;
+                                                    background: ${passed ? '#dcfce7' : '#fee2e2'};
+                                                    color: ${passed ? '#16a34a' : '#dc2626'};
+                                                    border: 2px solid ${passed ? '#16a34a' : '#dc2626'};
+                                                ">${passed ? '✓ PASSED' : '✗ FAILED'}</span>
+                                            </div>
                                             <div class="student-details">
                                                 <p><strong>Name:</strong> ${firstName} ${middleName} ${lastName} ${suffix}</p>
                                                 <p><strong>LRN:</strong> ${studentLrn}</p>
@@ -288,6 +302,7 @@ $conn->close();
                                                 <p><strong>Address:</strong> ${studentAddress}</p>
                                                 <p><strong>Exam Date:</strong> ${today.toLocaleDateString()}</p>
                                                 <p><strong>Score:</strong> <span id="score-value">${score}/20</span></p>
+                                                <p><strong>Passing Score:</strong> 12/20</p>
                                             </div>
                                         </div>
                                         <div class="button-group">

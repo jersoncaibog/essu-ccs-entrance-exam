@@ -1,0 +1,187 @@
+/* Account Settings Section */
+.account-card {
+    max-width: 560px;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.account-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.account-field label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.field-note {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.account-field input {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.account-field input:focus {
+    border-color: #4c51bf;
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.12);
+}
+
+.account-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 4px 0;
+}
+
+.section-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #374151;
+    margin: 0;
+}
+
+.account-save-btn {
+    margin-top: 8px;
+    padding: 11px 24px;
+    background-color: #4c51bf;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-start;
+}
+
+.account-save-btn:hover {
+    background-color: #3730a3;
+}
+
+/* Alert messages */
+.account-alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.account-alert-error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.account-alert-success {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+/* OTP Modal */
+.otp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.otp-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px 32px;
+    width: 420px;
+    max-width: 92vw;
+    z-index: 999;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.25s ease;
+}
+
+.otp-modal h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    color: #4c51bf;
+}
+
+.otp-modal p {
+    color: #374151;
+    font-size: 0.93rem;
+    margin: 0 0 24px;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#otp-input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 12px;
+    text-align: center;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+#otp-input:focus {
+    border-color: #4c51bf;
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.12);
+}
+
+.otp-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.otp-submit-btn {
+    padding: 11px 24px;
+    background-color: #4c51bf;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.otp-submit-btn:hover {
+    background-color: #3730a3;
+}
+
+.otp-cancel-link {
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.otp-cancel-link:hover {
+    color: #374151;
+    text-decoration: underline;
+}

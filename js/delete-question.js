@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let questionId = this.getAttribute("data-id");
 
             if (confirm("Are you sure you want to delete this question?")) {
-                fetch("delete-question.php", {
+                fetch(APP_BASE + "/delete-question.php", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: "id=" + questionId

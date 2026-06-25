@@ -16,7 +16,7 @@ include 'classes/connection.php';
         $sql = "INSERT INTO admin_quiz (question, option1, option2, option3, option4, answer) VALUES ('$question', '$option1', '$option2', '$option3', '$option4', '$answer')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Question added successfully!'); window.location.href='admin-dashboard.php';</script>";
+            echo "<script>alert('Question added successfully!'); window.location.href='admin/questions';</script>";
         } else {
             echo "Error: ". $sql . "<br>" . $conn->error;
         }

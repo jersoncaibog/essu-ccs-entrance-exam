@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   WHERE id = '$id'";
 
     if ($conn->query($updateSql) === TRUE) {
-        echo "<script>alert('Question updated successfully!'); window.location.href='admin-dashboard.php';</script>";
+        echo "<script>alert('Question updated successfully!'); window.location.href='admin/questions';</script>";
     } else {
         echo "Error updating record: " . $conn->error;
     }
@@ -84,7 +84,7 @@ $conn->close();
 
             <div class="form-buttons">
                 <button type="submit">Update</button>
-                <a href="admin-dashboard.php"><button type="button">Cancel</button></a>
+                <a href="admin/questions"><button type="button">Cancel</button></a>
             </div>
         </form>
     </section>
